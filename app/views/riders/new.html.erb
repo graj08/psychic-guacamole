@@ -1,0 +1,10 @@
+<h1>Create a new rider!</h1>
+<%= form_for(@rider) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :rollercoasters %>
+    <%= f.collection_check_boxes(:rollercoaster_ids, @rollercoasters, :id, :name) do |b| %>
+        <div><%= b.check_box %><%= b.label {b.text} %></div>
+        <% end %>
+    <%= f.submit %>
+    <% end %>
